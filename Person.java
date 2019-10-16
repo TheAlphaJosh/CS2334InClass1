@@ -1,6 +1,6 @@
 
 public class Person extends NameHolder {
-	private String lastName;
+	protected String lastName;
 	
 	
 	public Person() throws NameException {
