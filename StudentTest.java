@@ -29,26 +29,31 @@ public class StudentTest {
 	public void testCompareTo() throws NameException {
 		Student firstStudent = new Student("x", "Y", 2);
 		Student secondStudent = new Student("x", "Y", 3);
-		
+		boolean result = false;
+		boolean result2 = false;
+
 		int actual = secondStudent.compareTo(firstStudent);
-		int expected = 1;
 		
-		assertEquals(expected, actual);
-		
+		// should be bigger than zero
+		if (actual > 0) 
+			result = true;
+		assertTrue(result);
+
 		Student student = new Student("x", "Y", 5);
-		
-		expected = -1;
+
+		// should be smaller than zero
 		actual = secondStudent.compareTo(student);
+		if (actual < 0) 
+			result2 = true;
+		assertTrue(result2);
+		
+		Student studentX = new Student("x", "Y", 5);
+		actual = student.compareTo(studentX);
+		int expected = 0;
 		assertEquals(expected, actual);
-
-
-		
-		
-		
-
 
 	}
-	
+
 	@Test
 	public void testGet() throws NameException {
 		Integer expected = 4;
